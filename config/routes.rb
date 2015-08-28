@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'upload#index'
+  post 'upload' => 'upload#uploadFile'
+  # get 'upload' => 'upload#uploadFile'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
