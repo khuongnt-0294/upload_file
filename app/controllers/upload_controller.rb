@@ -12,4 +12,10 @@ class UploadController < ApplicationController
     post = DataFile.save(params[:upload])
     render :text => "File has been uploaded successfully"
   end
+
+  def cleanup
+    @filename = "green2.xlsx"
+    File.delete("#{Rails.root}/public/data/#{@filename}") if File.exist?("#{Rails.root}/public/data/#{@filename}")
+    redirect_to root_url
+  end
 end
